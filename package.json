@@ -1,11 +1,12 @@
 {
   "name": "stacklink",
-  "type": "module",
   "version": "1.0.0",
   "description": "Linktree-like proyect implemented with Express and Typescript",
   "main": "index.js",
   "scripts": {
-    "dev": "node --watch index.js"
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,10 @@
   "homepage": "https://github.com/brian-landler/stacklink#readme",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
