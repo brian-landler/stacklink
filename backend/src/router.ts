@@ -5,6 +5,11 @@ import { handleInputErrors } from './middleware/validation'
 
 const router = Router()
 
+router.get('/', (req, res) => {
+    console.log('GET /');
+    res.send('Hello from router');
+});
+
 /** Auth **/
 router.post('/auth/register',
     body('handle')
@@ -22,7 +27,7 @@ router.post('/auth/register',
     handleInputErrors,
     createAccount)
 
-router.post('auth/login',
+router.post('/auth/login',
     body('email')
         .isEmail()
         .withMessage('Invalid email address'),
