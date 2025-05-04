@@ -48,6 +48,7 @@ export const login = async (req: Request, res: Response) => {
     if(!isPasswordCorrect) {
         const error = new Error('Incorrect password.') // In production, for security reasons, the message would be 'Email address does not exist or password is incorrect.'
         res.status(401).json({error: error.message})
+        return
     }
 
     res.send('User authenticated')
