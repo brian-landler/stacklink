@@ -43,7 +43,7 @@ export const login = async (req: Request, res: Response) => {
         return
     }
 
-    const isPasswordCorrect = checkPassword(password, user.password)
+    const isPasswordCorrect = await checkPassword(password, user.password)
 
     if(!isPasswordCorrect) {
         const error = new Error('Incorrect password.') // In production, for security reasons, the message would be 'Email address does not exist or password is incorrect.'
