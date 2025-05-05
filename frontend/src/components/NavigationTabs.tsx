@@ -1,5 +1,5 @@
 import { BookmarkSquareIcon, UserIcon } from '@heroicons/react/20/solid'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const tabs = [
     { name: 'Links', href: '/admin', icon: BookmarkSquareIcon },
@@ -12,8 +12,11 @@ function classNames(...classes: string[]) {
 
 export default function NavigationTabs() {
     const location = useLocation()
+    const navigate = useNavigate()
 
-    const handleChange = () => {}
+    const handleChange = (e : React.ChangeEvent<HTMLSelectElement>) => {
+        navigate(e.target.value)
+    }
 
     return (
         <div className='mb-5'>
@@ -24,7 +27,7 @@ export default function NavigationTabs() {
                 <select
                     id="tabs"
                     name="tabs"
-                    className="block w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                    className="block w-full rounded-md border-gray-300 focus:border-brand-4 focus:ring-blue-500"
                     onChange={ handleChange }
                 >
                     {tabs.map((tab) => (
@@ -45,14 +48,14 @@ export default function NavigationTabs() {
                                 to={tab.href}
                                 className={classNames(
                                     location.pathname === tab.href
-                                        ? 'border-blue-500 text-blue-500'
-                                        : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
+                                        ? 'border-brand-3 text-brand-3'
+                                        : 'border-transparent text-gray-500 hover:border-brand-4 hover:text-brand-4',
                                     'group inline-flex items-center border-b-2 py-4 px-1 text-xl'
                                 )}
                             >
                                 <tab.icon
                                     className={classNames(
-                                        location.pathname === tab.href ? 'text-blue-500' : 'text-gray-400 group-hover:text-gray-500',
+                                        location.pathname === tab.href ? 'text-brand-3' : 'text-gray-400 group-hover:text-brand-4',
                                         '-ml-0.5 mr-2 h-5 w-5'
                                     )}
                                     aria-hidden="true"
