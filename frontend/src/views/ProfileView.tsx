@@ -1,4 +1,4 @@
-import { PrimaryButton } from "@/components/buttons";
+import { PrimaryButtonForm } from "@/components/buttons";
 
 
 export default function ProfileView() {
@@ -8,43 +8,43 @@ export default function ProfileView() {
             className="bg-white p-10 rounded-lg space-y-5"
             onSubmit={() => {}}
         >
-            <legend className="text-2xl text-slate-800 text-center">Editar Información</legend>
+            <legend className="text-2xl text-slate-800 text-center">Edit profile</legend>
             <div className="grid grid-cols-1 gap-2">
                 <label
                     htmlFor="handle"
-                >Handle:</label>
+                >Handle</label>
                 <input
                     type="text"
                     className="border-none bg-slate-100 rounded-lg p-2"
-                    placeholder="handle o Nombre de Usuario"
+                    placeholder="Handle or username"
                 />
             </div>
 
             <div className="grid grid-cols-1 gap-2">
                 <label
                     htmlFor="description"
-                >Descripción:</label>
+                >Description</label>
                 <textarea
                     className="border-none bg-slate-100 rounded-lg p-2"
-                    placeholder="Tu Descripción"
+                    placeholder="Your description"
                 />
             </div>
 
             <div className="grid grid-cols-1 gap-2">
                 <label
-                    htmlFor="handle"
-                >Imagen:</label>
+                    htmlFor="image"
+                >Image</label>
                 <input
                     id="image"
                     type="file"
-                    name="handle"
+                    name="image"
                     className="border-none bg-slate-100 rounded-lg p-2"
                     accept="image/*"
                     onChange={ () => {} }
                 />
             </div>
 
-            <PrimaryButton>Save changes</PrimaryButton>
+            <PrimaryButtonForm>Save changes</PrimaryButtonForm>
         </form>
     )
 }

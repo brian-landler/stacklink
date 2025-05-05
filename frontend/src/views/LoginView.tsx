@@ -28,7 +28,7 @@ export default function LoginView() {
 
     return (
         <>
-            <h1 className="text-3xl text-white text-center font-bold">
+            <h1 className="text-3xl text-center font-bold">
                 Log in
             </h1>
 
@@ -43,7 +43,7 @@ export default function LoginView() {
                         id="email"
                         type="email"
                         placeholder="Email"
-                        className="bg-slate-300 border-none p-3 rounded-lg placeholder-brand-1"
+                        className="bg-slate-300 border-none p-2 rounded-lg placeholder-brand-1"
                         {...register("email", {
                             required: "Please enter your email",
                             pattern: {
@@ -63,7 +63,7 @@ export default function LoginView() {
                         id="password"
                         type="password"
                         placeholder="Password"
-                        className="bg-slate-300 border-none p-3 rounded-lg placeholder-brand-1"
+                        className="bg-slate-300 border-none p-2 rounded-lg placeholder-brand-1"
                         {...register("password", {
                             required: "Please enter your password",
                         })}
@@ -78,7 +78,7 @@ export default function LoginView() {
 
             <nav className="mt-10">
                 <Link
-                    className="text-center text-white text-lg block" 
+                    className="text-center text-lg block" 
                     to="/auth/register">Don't have an account? Register here</Link>
             </nav>
         </>

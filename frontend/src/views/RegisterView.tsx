@@ -35,7 +35,7 @@ export default function RegisterView() {
 
     return (
         <>
-            <h1 className="text-3xl text-white text-center font-bold">
+            <h1 className="text-3xl text-center font-bold">
                 Create account
             </h1>
 
@@ -49,7 +49,7 @@ export default function RegisterView() {
                         id="name"
                         type="text"
                         placeholder="Name"
-                        className="bg-slate-200 border-none p-3 rounded-lg placeholder-brand-2"
+                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-brand-2"
                         {...register('name', {
                             required: "Name is required"
                         })}
@@ -64,7 +64,7 @@ export default function RegisterView() {
                         id="email"
                         type="email"
                         placeholder="Email"
-                        className="bg-slate-200 border-none p-3 rounded-lg placeholder-brand-2"
+                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-brand-2"
                         {...register('email', {
                             required: "Email is required",
                             pattern: {
@@ -83,7 +83,7 @@ export default function RegisterView() {
                         id="handle"
                         type="text"
                         placeholder="Username without spaces"
-                        className="bg-slate-200 border-none p-3 rounded-lg placeholder-brand-2"
+                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-brand-2"
                         {...register('handle', {
                             required: "Handle field is required"
                         })}
@@ -98,7 +98,7 @@ export default function RegisterView() {
                         id="password"
                         type="password"
                         placeholder="Password"
-                        className="bg-slate-200 border-none p-3 rounded-lg placeholder-brand-2"
+                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-brand-2"
                         {...register('password', {
                             required: "Password is required",
                             minLength: {
@@ -117,7 +117,7 @@ export default function RegisterView() {
                         id="password_confirmation"
                         type="password"
                         placeholder="Confirm Password"
-                        className="bg-slate-200 border-none p-3 rounded-lg placeholder-brand-2"
+                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-brand-2"
                         {...register('password_confirmation', {
                             required: "This field is required",
                             validate: (value) => value === password || "Password does not match"
@@ -132,7 +132,7 @@ export default function RegisterView() {
 
             <nav className="mt-5">
                 <Link 
-                    className="text-center text-white text-lg block"
+                    className="text-center text-lg block"
                     to="/auth/login">Already have an account? Login here</Link>
             </nav>
         </>

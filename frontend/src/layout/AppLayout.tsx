@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { Toaster } from "sonner";
-import { SecondaryButton } from "@/components/buttons";
+import { PrimaryButton } from "@/components/buttons";
 import NavigationTabs from "@/components/NavigationTabs";
 
 export default function AppLayout() {
@@ -8,13 +8,13 @@ export default function AppLayout() {
 
     return (
         <>
-            <header className="bg-brand-2 py-5 px-5">
+            <header className="bg-brand-6 py-5 px-5">
                 <div className="mx-auto max-w-5xl flex flex-col md:flex-row items-center md:justify-between">
                     <div className="w-full lg:p-0 py-4 md:w-1/3">
                         <img src="/logo.png" className="w-40 block" />
                     </div>
                     <div className="md:w-1/3 md:flex md:justify-end">
-                        <SecondaryButton>Log out</SecondaryButton>
+                        <PrimaryButton>Log out</PrimaryButton>
                     </div>
                 </div>
             </header>
