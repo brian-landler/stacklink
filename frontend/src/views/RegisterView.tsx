@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import { isAxiosError } from "axios"
 import { toast } from "sonner"
 import ErrorMessage from "../components/ErrorMessage"
-import { PrimaryButtonForm } from "../components/Buttons"
+import { PrimaryButtonForm } from '@/components/buttons'
 import { RegisterForm } from "../types"
 import api from "../config/axios"
 

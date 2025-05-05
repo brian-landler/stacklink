@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import ErrorMessage from "../components/ErrorMessage"
-import { PrimaryButtonForm } from "../components/Buttons"
+import { PrimaryButtonForm } from "../components/buttons/PrimaryButtonForm"
 import { LoginForm } from "../types"
 import api from "../config/axios"
 import { toast } from "sonner"
