@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
-import { useQueryClient } from "@tanstack/react-query";
+import { useQueryClient, useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
 import { PrimaryButtonForm } from "@/components/buttons";
 import ErrorMessage from "@/components/ErrorMessage";
 import { ProfileForm, User } from "@/types";
+import { updateProfile } from "@/api/StacklinkAPI";
 
 export default function ProfileView() {
     // Retrieving cached user data
@@ -14,8 +16,18 @@ export default function ProfileView() {
         description: data.description
     }})
 
+    const updateProfileMutation = useMutation({
+        mutationFn: updateProfile,
+        onError: (error) => {
+            toast.error(error.message)
+        },
+        onSuccess: (data) => {
+            toast.success(data)
+        }
+    })
+
     const handleUserProfileForm = (formData: ProfileForm) => {
-        console.log(formData)
+        updateProfileMutation.mutate(formData)
     }
 
     return (

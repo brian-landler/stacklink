@@ -68,7 +68,7 @@ export const updateProfile = async (req: Request, res: Response) => {
         const handle = slug(req.body.handle, '')
         const handleExists = await User.findOne({handle})
         if (handleExists && handleExists.email !== req.user.email) {
-            const error = new Error('Unavailable or incorrect user name')
+            const error = new Error('Unavailable user name')
             res.status(409).json({error: error.message})
             return
         }
