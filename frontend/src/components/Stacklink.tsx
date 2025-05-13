@@ -39,7 +39,17 @@ export default function Stacklink({data}: StacklinkProps) {
                             <Outlet />
                         </div>
                         <div className="w-full md:w-96 bg-brand-1 px-5 py-10 space-y-6">
+                            <p className="text-4xl text-center text-white">
+                                {data.handle}
+                            </p>
 
+                            {data.image &&
+                                <img src={data.image} alt="Profile picture" className="mx-auto max-w-[200px] max-h-[200px]"/>
+                            }
+
+                            <p className="text-center text-lg text-white font-bold">
+                                {data.description}
+                            </p>
                         </div>
                     </div>
                 </main>
