@@ -1,9 +1,12 @@
 import type { Request, Response } from 'express'
 import slug from 'slug'
+import formidable from 'formidable'
+import {v4 as uuid} from 'uuid'
 import User from "../models/User"
 import { checkPassword, hashPassword } from '../utils/auth'
 import { validationResult } from 'express-validator'
 import { generateJWT } from '../utils/jwt'
+import cloudinary from '../config/cloudinary'
 
 export const createAccount = async (req: Request, res: Response) => {  
     const { email, password } = req.body
@@ -79,6 +82,42 @@ export const updateProfile = async (req: Request, res: Response) => {
         
         await req.user.save()
         res.send('Your information has been updated correctly!')        
+    } catch (e) {
+        const error = new Error('There has been an error')
+        res.status(500).json({error: error.message})
+        return
+    }
+}
+
+
+export const uploadImage = async (req: Request, res: Response) => {
+    const form = formidable({multiples: false})
+
+    try {
+        form.parse(req, (error, fields, files) => {
+            cloudinary.uploader.upload(
+                files.file[0].filepath,
+                {
+                    public_id: uuid(),
+                    folder: 'uploads',
+                    quality: "auto",        // Let Cloudinary pick optimal compression
+                    fetch_format: "auto",   // WebP/AVIF when available
+                    transformation: [
+                      { width: 1000, crop: "limit" }, // Don't upscale images beyond 1000px
+                    ]
+                },
+                async function(error, result) {
+                    if (error) {
+                        const error = new Error('There has been an error uploading the image')
+                        res.status(500).json({error: error.message})
+                    }
+                    if (result) {
+                        req.user.image = result.secure_url
+                        await req.user.save()
+                        res.json({image: result.secure_url})
+                    }
+                })
+        })
     } catch (e) {
         const error = new Error('There has been an error')
         res.status(500).json({error: error.message})
