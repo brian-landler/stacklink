@@ -27,7 +27,7 @@ export default function NavigationTabs() {
                 <select
                     id="tabs"
                     name="tabs"
-                    className="block w-full rounded-md border-gray-300 focus:border-brand-4 focus:ring-blue-500"
+                    className="block w-full text-brand-3 font-bold focus:border-brand-4 focus:ring-brand-4 py-2 border-b-2 border-brand-3"
                     onChange={ handleChange }
                 >
                     {tabs.map((tab) => (

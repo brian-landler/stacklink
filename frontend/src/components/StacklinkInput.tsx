@@ -10,7 +10,7 @@ type StacklinkInputProps = {
 
 export default function StacklinkInput({item, handleUrlChange, handleEnableLink} : StacklinkInputProps) {
     return (
-        <div className="bg-white shadow-sm p-5 flex items-center gap-5">
+        <div className="bg-white shadow-sm p-5 flex flex-wrap items-center gap-5">
             <div 
                 className="w-12 h-12 bg-cover"
                 style={{ backgroundImage: `url('/social/icon_${item.name}.svg')`}}

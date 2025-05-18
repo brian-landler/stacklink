@@ -1,14 +1,22 @@
 import { Link, Outlet } from "react-router-dom";
 import { Toaster } from "sonner";
+import { SocialNetwork, User } from "@/types";
+import { useEffect, useState } from "react";
 import NavigationTabs from "./NavigationTabs";
 import { PrimaryButton } from "./buttons";
-import { User } from "@/types";
+import StacklinkLink from "./StacklinkLink";
 
 type StacklinkProps = {
     data: User
 }
 
 export default function Stacklink({data}: StacklinkProps) {
+    const [enabledLinks, seEnabledLinks] = useState<SocialNetwork[]>(JSON.parse(data.links).filter((item: SocialNetwork) => item.enabled))
+    
+    useEffect(() => {
+        seEnabledLinks(JSON.parse(data.links).filter((item : SocialNetwork) => item.enabled))
+    }, [data])
+    
     return (
         <>
             <header className="bg-brand-6 py-5 px-5">
@@ -50,6 +58,12 @@ export default function Stacklink({data}: StacklinkProps) {
                             <p className="text-center text-lg text-white font-bold">
                                 {data.description}
                             </p>
+
+                            <div className="mt-5 text-white flex flex-col gap-5">
+                                {enabledLinks.map(link => (
+                                    <StacklinkLink key={link.name} link={link}/>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </main>
