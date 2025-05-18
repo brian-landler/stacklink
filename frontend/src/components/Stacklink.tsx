@@ -62,7 +62,7 @@ export default function Stacklink({data}: StacklinkProps) {
                     <div className="flex justify-end">
                         <Link
                             className="font-bold text-right text-brand-1 text-2xl"
-                            to={''}
+                            to={`/${data.handle}`}
                             target="_blank"
                             rel="noreferrer noopener"
                         >Visit my profile at /{data.handle}</Link>

@@ -5,6 +5,7 @@ import AuthLayout from "./layout/AuthLayout"
 import AppLayout from "./layout/AppLayout"
 import StacklinkView from "./views/StacklinkView"
 import ProfileView from "./views/ProfileView"
+import HandleView from "./views/HandleView"
 
 export default function Router() {
 
@@ -19,6 +20,10 @@ export default function Router() {
                 <Route path="/admin" element={ <AppLayout /> }>
                     <Route index={true} element={ <StacklinkView /> } />
                     <Route path="profile" element={ <ProfileView /> } />
+                </Route>
+
+                <Route path='/:handle' element={<AuthLayout />}>
+                    <Route element={<HandleView />} index={true}/>
                 </Route>
             </Routes>
         </BrowserRouter>

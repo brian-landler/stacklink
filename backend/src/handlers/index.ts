@@ -125,3 +125,23 @@ export const uploadImage = async (req: Request, res: Response) => {
         return
     }
 }
+
+export const getUserByHandle = async (req: Request, res: Response) => {
+    try {
+        const { handle } = req.params
+        const user = await User.findOne({handle}).select('-_id -__v -email -password')
+
+        if (!user) {
+            const error = new Error('User not found')
+            res.status(404).json({error: error.message})            
+        }
+
+        res.json(user)
+        
+        return
+    } catch (e) {
+        const error = new Error('There has been an error')
+        res.status(500).json({error: error.message})
+        return
+    }
+}
