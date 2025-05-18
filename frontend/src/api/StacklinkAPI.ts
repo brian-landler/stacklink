@@ -37,3 +37,15 @@ export async function uploadImage(file : File) {
         }
     }
 }
+
+export async function getUserByHandle(handle: String) {
+    try {
+        const url = `/${handle}`
+        const { data } = await api.get<string>(url)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
