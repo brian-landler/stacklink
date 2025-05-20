@@ -6,8 +6,8 @@ import { useQueryClient } from "@tanstack/react-query";
 import { SocialNetwork, User } from "@/types";
 import { useEffect, useState } from "react";
 import NavigationTabs from "./NavigationTabs";
-import { PrimaryButton } from "./buttons";
 import StacklinkLink from "./StacklinkLink";
+import Header from "./Header";
 
 type StacklinkProps = {
     data: User
@@ -45,16 +45,8 @@ export default function Stacklink({data}: StacklinkProps) {
 
     return (
         <>
-            <header className="bg-brand-6 py-5 px-5">
-                <div className="mx-auto max-w-5xl flex flex-col md:flex-row items-center md:justify-between">
-                    <div className="w-full lg:p-0 py-4 md:w-1/3">
-                        <img src="/logo.png" className="w-40 block" />
-                    </div>
-                    <div className="md:w-1/3 md:flex md:justify-end">
-                        <PrimaryButton>Log out</PrimaryButton>
-                    </div>
-                </div>
-            </header>
+            <Header/>
+
             <div className="bg-gray-100  min-h-screen">
                 <main className="mx-auto max-w-5xl py-10 px-5 ">
                     <NavigationTabs />
