@@ -3,9 +3,9 @@ import { Navigate, useParams } from "react-router-dom"
 import { CSSProperties } from "react";
 import { getUserByHandle } from "@/api/StacklinkAPI"
 import { useQuery } from "@tanstack/react-query"
+import HandleData from "@/components/HandleData";
 
 export default function HandleView() {
-    /* test */
     const params = useParams()
     const handle = params.handle!
 
@@ -22,10 +22,5 @@ export default function HandleView() {
 
     if (isLoading) return <ClipLoader cssOverride={override} size={150} aria-label="Loading Spinner" data-testid="loader" />
     if (error) return <Navigate to={'/404'} />
-
-    return (
-        <>
-            <div>{ handle }</div>        
-        </>
-    )
+    if (data) return <HandleData data={data} />
 }
