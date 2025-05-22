@@ -21,7 +21,7 @@ export default function StacklinkLink({link} : StacklinkLinkProps) {
             <div 
                 ref={setNodeRef}
                 style={style} 
-                className="bg-white py-2 px-5 flex items-center gap-5 rounded-lg"
+                className="bg-white py-2 px-5 flex items-center gap-5 rounded-lg hover:bg-slate-200 cursor-grab"
                 {...attributes}
                 {...listeners}
             >

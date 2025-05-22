@@ -53,7 +53,7 @@ export default function Stacklink({data}: StacklinkProps) {
                     
                     <div className="flex justify-end">
                         <Link
-                            className="font-bold text-right text-brand-1 text-2xl"
+                            className="font-bold text-right text-brand-3 text-2xl"
                             to={`/${data.handle}`}
                             target="_blank"
                             rel="noreferrer noopener"
@@ -64,13 +64,13 @@ export default function Stacklink({data}: StacklinkProps) {
                         <div className="flex-1 ">
                             <Outlet />
                         </div>
-                        <div className="w-full md:w-96 bg-brand-1 px-5 py-10 space-y-6">
+                        <div className="w-full md:w-96 bg-brand-3 px-5 py-10 space-y-6">
                             <p className="text-4xl text-center text-white">
                                 {data.handle}
                             </p>
 
                             {data.image &&
-                                <img src={data.image} alt="Profile picture" className="mx-auto max-w-[200px] max-h-[200px]"/>
+                                <img src={data.image} alt="Profile picture" className="h-40 w-40 object-cover object-top rounded-full mx-auto"/>
                             }
 
                             <p className="text-center text-lg text-white font-bold">

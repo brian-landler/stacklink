@@ -23,7 +23,7 @@ export default function HandleData({data} : HandleDataProps) {
                 {links.length ? 
                 links.map(link => (
                     <a 
-                        className="bg-white px-5 py-2 flex gap-4 items-center shadow-md"
+                        className="bg-white px-5 py-2 flex gap-4 items-center shadow-md hover:bg-slate-200"
                         target="_blank"
                         rel="noreferrer noopener"
                         href="">

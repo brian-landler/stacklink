@@ -44,12 +44,12 @@ export default function RegisterView() {
                 className="bg-white rounded-2xl px-5 py-10 mt-10"
             >
                 <div className="grid grid-cols-1 space-y-3 pb-5">
-                    <label htmlFor="name" className="text-2xl text-brand-1">Nombre</label>
+                    <label htmlFor="name" className="text-2xl">Nombre</label>
                     <input
                         id="name"
                         type="text"
                         placeholder="Name"
-                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-brand-2"
+                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-slate-800"
                         {...register('name', {
                             required: "Name is required"
                         })}
@@ -59,12 +59,12 @@ export default function RegisterView() {
                 </div>
 
                 <div className="grid grid-cols-1 space-y-3 pb-5">
-                    <label htmlFor="email" className="text-2xl text-brand-1">E-mail</label>
+                    <label htmlFor="email" className="text-2xl">E-mail</label>
                     <input
                         id="email"
                         type="email"
                         placeholder="Email"
-                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-brand-2"
+                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-slate-800"
                         {...register('email', {
                             required: "Email is required",
                             pattern: {
@@ -78,12 +78,12 @@ export default function RegisterView() {
                 </div>
 
                 <div className="grid grid-cols-1 space-y-3 pb-5">
-                    <label htmlFor="handle" className="text-2xl text-brand-1">Handle</label>
+                    <label htmlFor="handle" className="text-2xl">Handle</label>
                     <input
                         id="handle"
                         type="text"
                         placeholder="Username without spaces"
-                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-brand-2"
+                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-slate-800"
                         {...register('handle', {
                             required: "Handle field is required"
                         })}
@@ -93,12 +93,12 @@ export default function RegisterView() {
                 </div>
 
                 <div className="grid grid-cols-1 space-y-3 pb-5">
-                    <label htmlFor="password" className="text-2xl text-brand-1">Password</label>
+                    <label htmlFor="password" className="text-2xl">Password</label>
                     <input
                         id="password"
                         type="password"
                         placeholder="Password"
-                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-brand-2"
+                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-slate-800"
                         {...register('password', {
                             required: "Password is required",
                             minLength: {
@@ -112,12 +112,12 @@ export default function RegisterView() {
                 </div>
 
                 <div className="grid grid-cols-1 space-y-3 pb-5">
-                    <label htmlFor="password_confirmation" className="text-2xl text-brand-1">Repeat Password</label>
+                    <label htmlFor="password_confirmation" className="text-2xl">Repeat Password</label>
                     <input
                         id="password_confirmation"
                         type="password"
                         placeholder="Confirm Password"
-                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-brand-2"
+                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-slate-800"
                         {...register('password_confirmation', {
                             required: "This field is required",
                             validate: (value) => value === password || "Password does not match"
@@ -130,10 +130,14 @@ export default function RegisterView() {
                 <PrimaryButtonForm>Register</PrimaryButtonForm>
             </form>
 
-            <nav className="mt-5">
+            <nav className="mt-10 inline-flex gap-2 text-lg text-center justify-center w-full">
+                <span>
+                    Already have an account?
+                </span>
+
                 <Link 
-                    className="text-center text-lg block"
-                    to="/auth/login">Already have an account? Login here</Link>
+                    className="text-center block text-brand-3 border-b-1 border-brand-3 hover:text-brand-6 hover:border-brand-6 active:text-brand-6 active:border-brand-6 focus:text-brand-6 focus:border-brand-6"
+                    to="/auth/login">Login here</Link>
             </nav>
         </>
     )

@@ -38,12 +38,12 @@ export default function LoginView() {
                 noValidate
             >
                 <div className="grid grid-cols-1 space-y-3 pb-5">
-                    <label htmlFor="email" className="text-2xl text-color-brand-1">E-mail</label>
+                    <label htmlFor="email" className="text-2xl">E-mail</label>
                     <input
                         id="email"
                         type="email"
                         placeholder="Email"
-                        className="bg-slate-300 border-none p-2 rounded-lg placeholder-brand-1"
+                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-slate-800"
                         {...register("email", {
                             required: "Please enter your email",
                             pattern: {
@@ -58,12 +58,12 @@ export default function LoginView() {
                 </div>
 
                 <div className="grid grid-cols-1 space-y-3 pb-5">
-                    <label htmlFor="password" className="text-2xl text-color-brand-1">Password</label>
+                    <label htmlFor="password" className="text-2xl">Password</label>
                     <input
                         id="password"
                         type="password"
                         placeholder="Password"
-                        className="bg-slate-300 border-none p-2 rounded-lg placeholder-brand-1"
+                        className="bg-slate-200 border-none p-2 rounded-lg placeholder-slate-800"
                         {...register("password", {
                             required: "Please enter your password",
                         })}
@@ -76,10 +76,14 @@ export default function LoginView() {
                 <PrimaryButtonForm>Log In</PrimaryButtonForm>
             </form>
 
-            <nav className="mt-10">
+            <nav className="mt-10 inline-flex gap-2 text-lg justify-center w-full">
+                <span className="">
+                    Don't have an account?
+                </span>
+                
                 <Link
-                    className="text-center text-lg block" 
-                    to="/auth/register">Don't have an account? Register here</Link>
+                    className="text-center block text-brand-3 border-b-1 border-brand-3 hover:text-brand-6 hover:border-brand-6 active:text-brand-6 active:border-brand-6 focus:text-brand-6 focus:border-brand-6"
+                    to="/auth/register">Register here</Link>
             </nav>
         </>
     )
