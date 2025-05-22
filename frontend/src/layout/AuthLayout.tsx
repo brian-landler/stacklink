@@ -5,7 +5,7 @@ import { Toaster } from "sonner"
 export default function AuthLayout() {
     return (
         <>
-            <div className="min-h-screen bg-slate-300">
+            <div className="min-h-screen bg-slate-200">
                 <div className="max-h-50 p-x-5 pt-10">
                     <Logo className="w-80 object-contain mx-auto object-center" />
                 </div>

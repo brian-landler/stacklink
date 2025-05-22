@@ -89,8 +89,8 @@
       <rect class="cls-2" x="3.24" y="-87.32" width="397.36" height="456.16"/>
     </clipPath>
     <linearGradient id="Degradado_sin_nombre" data-name="Degradado sin nombre" x1="9.49" y1="134.79" x2="443.42" y2="134.79" gradientTransform="translate(0 255.68) scale(1 -1)" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#e0de2b"/>
-      <stop offset=".99" stop-color="#65b344"/>
+      <stop offset="0" stop-color="#BF36A8"/>
+      <stop offset=".99" stop-color="#6529BB"/>
     </linearGradient>
     <linearGradient id="Degradado_sin_nombre_2" data-name="Degradado sin nombre 2" x1="267.06" y1="94.37" x2="267.06" y2="13.57" gradientTransform="translate(0 255.68) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#000"/>
