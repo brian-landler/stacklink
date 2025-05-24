@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import slugify from "react-slugify";
 import ErrorMessage from "./ErrorMessage";
 import { PrimaryButtonForm } from "./buttons";
 
@@ -12,7 +13,9 @@ export default function SearchForm() {
     const handle = watch('handle')
 
     const handleSearch = () => {
-        console.log(handle)
+        const slug = slugify(handle)
+        console.log(slug);
+        
     }
 
     return (
@@ -37,10 +40,6 @@ export default function SearchForm() {
             {errors.handle && (
                 <ErrorMessage>{errors.handle.message}</ErrorMessage>
             )}
-
-            <div className="mt-10">
-
-            </div>
 
             <PrimaryButtonForm>
                 Get my Stacklink
