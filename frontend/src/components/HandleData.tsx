@@ -8,7 +8,7 @@ export default function HandleData({data} : HandleDataProps) {
     const links : SocialNetwork[] = JSON.parse(data.links).filter((link : SocialNetwork) => link.enabled)
 
     return (
-        <div className="space-y-6 md:px-5">
+        <div className="space-y-6 px-5">
             <p className="text-4xl text-center font-bold">
                 {data.handle}
             </p>
