@@ -1,88 +1,130 @@
-# 🔗 Linktree Clone – Express + TypeScript
+# 🔗 StackLink – A Modern Linktree Clone (Full-Stack MERN + TypeScript)
 
-> 🚀 A Linktree-style web app built with the MERN stack + TypeScript  
-> **Status**: Initial Commit – setting up the project structure and tooling
+> 🚀 A feature-rich Linktree-style application built with a modern full-stack stack: React, Express, MongoDB, and TypeScript.
 
-## 🧠 Project Overview
+🔗 **Live demo**: [https://unrivaled-cupcake-74bb6d.netlify.app/](https://unrivaled-cupcake-74bb6d.netlify.app/)  
+🗂 **Repository**: [github.com/brian-landler/stacklink](https://github.com/brian-landler/stacklink)
 
-**StackLink** is a full-stack application where users can register, personalize, and share their own link pages, much like Linktree. This project is being built as part of a course on modern full-stack development using **Express**, **React**, **TailwindCSS**, and **TypeScript**.
+---
 
-Key user features will include:
-- User authentication (JWT-based)
-- Profile creation with custom handles
-- Link management (add/edit/remove/sort social links)
-- Avatar upload via Cloudinary
-- Live public preview pages
-- Admin panel with form validation and toast notifications
-- Optimistic updates and caching with React Query
+## 🧠 Overview
+
+**StackLink** allows users to create a personal link page, just like Linktree — complete with social media links, profile image upload, public profile sharing, and an admin dashboard.
+
+This project was built to reinforce my transition into full-stack development using modern frameworks, libraries, and best practices.
+
+### ✅ Core Features
+
+- 🔐 JWT-based authentication
+- ✍️ Editable user profile with image upload (Cloudinary)
+- 🔗 Add, enable/disable, and reorder social links (with drag-and-drop)
+- 🧩 Form validation with feedback
+- 🌐 Live public user pages
+- 💾 Optimistic updates and caching (React Query)
+- 📱 Fully responsive layout with TailwindCSS
+
+---
 
 ## ⚙️ Tech Stack
 
-- **Frontend**: React + Vite + React Router + TailwindCSS + React Hook Form + React Query (TanStack)
-- **Backend**: Node.js + Express + MongoDB (Mongoose) + TypeScript
-- **Auth**: JSON Web Tokens (JWT) + Cookies or LocalStorage
-- **File Uploads**: Cloudinary + Formidable
-- **Dev Tools**: Axios, Nodemon, ESLint, Prettier
+### 🔷 Frontend
+- React (Vite)
+- React Router
+- TailwindCSS
+- React Hook Form
+- React Query (TanStack)
+- Axios
+
+### 🔶 Backend
+- Node.js + Express
+- MongoDB (Mongoose)
+- TypeScript
+- Formidable (file uploads)
+- Cloudinary (image hosting)
+- JSON Web Tokens (JWT)
+- Express Validator
 
 ---
 
-## 🛠 Planned Functionality
+## 🚀 Project Goals
 
-- ✅ Authentication system (register/login/logout)
-- ✅ Secure password hashing
-- ✅ Backend validation with Express Validator
-- ✅ Protected routes via middleware
-- ✅ Drag & Drop to order social links
-- ✅ Editable user profiles with image uploads
-- ✅ Public-facing share page for each user
-- ✅ Search handles on homepage
-- ✅ Responsive layout with custom theming
+- Build a realistic full-stack app with clean architecture
+- Practice secure user authentication
+- Use cloud-based storage (Cloudinary) for profile images
+- Handle real-time updates and form feedback cleanly
+- Build reusable UI components in a scalable way
 
 ---
 
-## 📁 Tech Stack
+## 🛠️ Getting Started (Local Development)
 
-- Node.js + Express  
-- TypeScript  
-- JSON Web Tokens (JWT)  
-- MongoDB (Mongoose)  
-- Postman – for API testing  
+1. **Clone the repository**:
 
----
-
-## 🧠 Why I'm Building This
-
-This project is part of my transition to a full-stack role with a focus on modern web technologies. I’m using it to:
-- Practice core backend skills with Node/Express
-- Learn API security (authentication, input validation)
-- Structure a real-world project in a clean, modular way
-
----
-
-## 🛠️ Setup Instructions
-
-1. Clone the repo:
-    
     ```bash
-    git clone https://github.com/YOUR_USERNAME/linktree-clone.git
-    cd linktree-clone
+    git clone https://github.com/brian-landler/stacklink.git
+    cd stacklink
     ```
 
-2. Install dependencies:
-    
+2. **Set up environment variables** in `backend/.env`:
+
+    ```env
+    MONGO_URI=your_mongodb_connection_string
+    CLOUDINARY_API_KEY=your_cloudinary_api_key
+    CLOUDINARY_SECRET=your_cloudinary_secret
+    CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+    JWT_SECRET=your_jwt_secret
+    ```
+
+3. **Install dependencies**:
+
     ```bash
+    # Backend
+    cd backend
+    npm install
+
+    # Frontend
+    cd ../frontend
     npm install
     ```
 
-3. Run the server in dev mode:
-    
+4. **Run the backend**:
+
     ```bash
+    cd backend
     npm run dev
     ```
-4. [...]
 
-## ✅ Current Progress
+5. **Run the frontend**:
 
-- [x] Initial Express server setup
+    ```bash
+    cd ../frontend
+    npm run dev
+    ```
 
-## 📌 Roadmap
+---
+
+## 📷 Screenshots
+
+### 🧑‍💼 Admin Dashboard - Link management
+![Admin Dashboard - Link management](screenshots/adminpage.png)
+
+### 🧑‍💼 Admin Dashboard - Profile
+![Admin dashboard - Profile](screenshots/adminpage2.png)
+
+### 🌐 Public Profile Page
+![Public profile page](screenshots/profilepage.png)
+
+### 📱 Mobile Layout
+![Mobile view](screenshots/profilepage_mobile.png)
+---
+
+## ✍️ Author
+
+Built by [Brian Landler](https://github.com/brian-landler)  
+If you enjoyed the project, ⭐ the repo and consider connecting with me on [LinkedIn](https://www.linkedin.com/in/brian-landler-a72377b1/)!
+
+---
+
+## 📌 License
+
+MIT

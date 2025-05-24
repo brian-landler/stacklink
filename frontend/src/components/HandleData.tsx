@@ -8,7 +8,7 @@ export default function HandleData({data} : HandleDataProps) {
     const links : SocialNetwork[] = JSON.parse(data.links).filter((link : SocialNetwork) => link.enabled)
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-6 md:px-5">
             <p className="text-4xl text-center font-bold">
                 {data.handle}
             </p>
@@ -26,7 +26,7 @@ export default function HandleData({data} : HandleDataProps) {
                         className="bg-white px-5 py-2 flex gap-4 items-center shadow-md hover:bg-slate-200"
                         target="_blank"
                         rel="noreferrer noopener"
-                        href="">
+                        href={link.url}>
                             <img src={`/social/icon_${link.name}.svg`} alt={`${link.name} icon`} className="w-12"/>
                             <p className="font-semibold capitalize">Visit my: {link.name}</p>
                         </a>
