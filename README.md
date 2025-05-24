@@ -124,7 +124,3 @@ Built by [Brian Landler](https://github.com/brian-landler)
 If you enjoyed the project, ⭐ the repo and consider connecting with me on [LinkedIn](https://www.linkedin.com/in/brian-landler-a72377b1/)!
 
 ---
-
-## 📌 License
-
-MIT
